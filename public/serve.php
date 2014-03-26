@@ -32,8 +32,8 @@ if($_GET['ih']) {
 			}
 
 			header('Content-type: application/x-bittorrent');
-			header('X-Accel-Redirect: /torrents/'.$ih.'.torrent');
 			header('Content-Disposition: attachment; filename="'.$ih.'.torrent"');
+			readfile("{$GLOBALS['LOCATION']}/{$ih}.torrent");
 		} elseif($exists and !$notnull and !$mature) {
 			// error: 
 			header($_SERVER["SERVER_PROTOCOL"].' 404 Not Found', true, 404);
@@ -70,8 +70,8 @@ if($_GET['ih']) {
 				touch($loc);
 				
 				header('Content-type: application/x-bittorrent');
-				header('X-Accel-Redirect: /torrents/'.$ih.'.torrent');
 				header('Content-Disposition: attachment; filename="'.$ih.'.torrent"');
+				readfile("{$GLOBALS['LOCATION']}/{$ih}.torrent");
 			} else {
 				header($_SERVER["SERVER_PROTOCOL"].' 404 Not Found', true, 404);
 				echo '<h1>Torrent not found</h1><p>Torrent not found in any of the providers. Retrying later.<br /><small>Try and miss.</small></p>';
