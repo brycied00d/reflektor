@@ -17,7 +17,7 @@ Configuration
             DocumentRoot "/var/www/reflektor/public/"   
             ServerName reflektor.karmorra.info
             RewriteEngine On
-            RewriteRule ^/torrent/([A-Fa-f0-9]{40})\.[Tt][Oo][Rr]{2}[Ee][Nn][Tt]$ /serve.php?ih=$1 [L]
+            RewriteRule ^/torrent/([A-F0-9]{40})\.torrent$ /serve.php?ih=$1 [L,NC]
             RewriteRule ^/torrent/?$ / [L]
             DirectoryIndex index.html
             <Directory /var/www/reflektor/public/>
