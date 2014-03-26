@@ -5,8 +5,8 @@ Set up your own
 
 reflektor requires:
 
--   PHP 5.4
--   nginx
+-   PHP 5.3
+-   Apache
 -   linux
 
 
