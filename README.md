@@ -7,7 +7,7 @@ reflektor requires:
 
 -   PHP 5.3
 -   Apache
--   linux
+-   OpenBSD
 
 
 Configuration
