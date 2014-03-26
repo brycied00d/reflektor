@@ -12,20 +12,20 @@ reflektor requires:
 
 Configuration
 --
-
-<VirtualHost *:80>
-        DocumentRoot "/var/www/reflektor/public/"   
-        ServerName reflektor.karmorra.info
-        RewriteEngine On
-        RewriteRule ^/torrent/([A-Fa-f0-9]{40})\.[Tt][Oo][Rr]{2}[Ee][Nn][Tt]$ /serve.php?ih=$1 [L]
-        RewriteRule ^/torrent/?$ / [L]
-        DirectoryIndex index.html
-        <Directory /var/www/reflektor/public/>
-                AllowOverride None
-                Order allow,deny
-                Allow from all
-        </Directory>
-</VirtualHost>
+    
+    <VirtualHost *:80>
+            DocumentRoot "/var/www/reflektor/public/"   
+            ServerName reflektor.karmorra.info
+            RewriteEngine On
+            RewriteRule ^/torrent/([A-Fa-f0-9]{40})\.[Tt][Oo][Rr]{2}[Ee][Nn][Tt]$ /serve.php?ih=$1 [L]
+            RewriteRule ^/torrent/?$ / [L]
+            DirectoryIndex index.html
+            <Directory /var/www/reflektor/public/>
+                    AllowOverride None
+                    Order allow,deny
+                    Allow from all
+            </Directory>
+    </VirtualHost>
     
 Dotdeb.org sources are recommended for an easy and painless setup.
 
